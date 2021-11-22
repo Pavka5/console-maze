@@ -13,14 +13,21 @@ namespace MazeGenerator
             int mazeSize = 11;
             var maze = new string[mazeSize, mazeSize];
 
-            for (int i = 0; i < mazeSize; i++)
+            for (int i = 0; i < maze.GetLength(0); i++)
             {
-                for(int j = 0; j < mazeSize; j++) 
+                for(int j = 0; j < maze.GetLength(1); j++) 
                 {
-                    maze[i, j] = "x";
-                    Console.Write(string.Format("{0} ", maze[i, j]));
+                    maze[i, j] = "x";      
                 }
-                Console.Write(Environment.NewLine + Environment.NewLine);
+            }
+            for (int i = 0;i < maze.GetLength(0); i++)
+            {
+                for (int j = 0; j < maze.GetLength(1); j++)
+                {
+                    var item = maze[i, j];
+                    Console.Write(item + " ");
+                }
+                Console.Write(Environment.NewLine);
             }
         }
     }
