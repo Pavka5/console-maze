@@ -19,7 +19,6 @@ namespace MazeGenerator
                 {
                     maze[i, j] = "x";      
                 }
-
             }
             for (int i = 0; i < maze.GetLength(0); i++)
             {
