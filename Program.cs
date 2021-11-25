@@ -10,25 +10,13 @@ namespace MazeGenerator
     {
         static void Main(string[] args)
         {
-            int mazeSize = 11;
-            var maze = new string[mazeSize, mazeSize];
-
-            for (int i = 0; i < maze.GetLength(0); i++)
-            {
-                for(int j = 0; j < maze.GetLength(1); j++) 
-                {
-                    maze[i, j] = "x";      
-                }
-            }
-            for (int i = 0;i < maze.GetLength(0); i++)
-            {
-                for (int j = 0; j < maze.GetLength(1); j++)
-                {
-                    var item = maze[i, j];
-                    Console.Write(item + " ");
-                }
-                Console.Write(Environment.NewLine);
-            }
+            var mazeGenerator = new Maze();
+            var maze = mazeGenerator.GetEmptyMaze(11);
+            mazeGenerator.FillMaze(maze, Constants.Maze.SymbolEmpty);
+            mazeGenerator.OutputMaze(maze);
+            mazeGenerator.BuildBorder(maze, Constants.Maze.SymbolWall);
+            Console.WriteLine(Environment.NewLine);
+            mazeGenerator.OutputMaze(maze);
         }
     }
 }
