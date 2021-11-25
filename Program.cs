@@ -10,6 +10,7 @@ namespace MazeGenerator
     {
         static void Main(string[] args)
         {
+<<<<<<< Updated upstream
             int mazeSize = 11;
             var maze = new string[mazeSize, mazeSize];
 
@@ -32,6 +33,23 @@ namespace MazeGenerator
             }
 
             Console.WriteLine("Ola");
+=======
+            var mazeGenerator = new Maze();
+            var maze = mazeGenerator.GetEmptyMaze(11);
+            mazeGenerator.FillMaze(maze, Constants.Maze.SymbolEmpty);
+            mazeGenerator.OutputMaze(maze);
+            Console.WriteLine(Environment.NewLine);
+            mazeGenerator.BuildBorder(maze, Constants.Maze.SymbolWall);
+            mazeGenerator.OutputMaze(maze);
+            Console.WriteLine(Environment.NewLine);
+            mazeGenerator.BuildLeadingPoints(maze, Constants.Maze.SymbolLeading);
+            mazeGenerator.OutputMaze(maze);
+            Console.WriteLine(Environment.NewLine);
+            mazeGenerator.BuildWalls(maze, Constants.Maze.SymbolWall, Constants.Maze.SymbolLeading);
+            mazeGenerator.OutputMaze(maze);
+            Console.WriteLine(Environment.NewLine);
+            mazeGenerator.BuildWalls(maze, Constants.Maze.SymbolWall, Constants.Maze.SymbolLeading);
+>>>>>>> Stashed changes
         }
     }
 }
